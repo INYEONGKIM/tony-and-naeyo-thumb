@@ -17,7 +17,7 @@ def recvall(sock, count):
     return buf
 
 
-TCP_IP = 'localhost'
+TCP_IP = '127.0.0.1'
 TCP_PORT = 5001
 
 kernel = np.ones((3, 3), np.uint8)
@@ -89,7 +89,7 @@ while True:
 
     conn.send(str(predict))
 
-    key = cv2.waitKey(10) & 0xff
+    key = cv2.waitKey(1) & 0xff
     if key == 27:
         break
 

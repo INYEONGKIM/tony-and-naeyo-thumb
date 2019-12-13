@@ -13,8 +13,8 @@ def Main():
     cap = cv2.VideoCapture(0)
     model = load_model('thr_final_model2.h5')
     count_list = []
-    while 1:
-        try:
+    try:
+        while 1:
             ret, frame = cap.read()
             print frame.shape
             frame = cv2.flip(frame, 1)
@@ -78,8 +78,8 @@ def Main():
                 cv2.putText(frame, 'NO SKIN COLOR', (0, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 3, cv2.LINE_AA)
                 print 'no skin color'
                 cv2.waitKey(1)
-        except:
-            pass
+    except:
+        pass
 
     cap.release()
     cv2.destroyAllWindows()

@@ -6,7 +6,7 @@ import socket
 import cv2
 import numpy
 
-TCP_IP = 'localhost'
+TCP_IP = '127.0.0.1'
 TCP_PORT = 5001
 
 while True:
@@ -34,7 +34,7 @@ while True:
 
         sock.close()
 
-        __import__('time').sleep(0.05)
+        # __import__('time').sleep(0.05)
 
         # decoding
         # decimg = cv2.imdecode(data, 1)
@@ -44,7 +44,7 @@ while True:
         if key == 27:
             break
     except:
-        # print "socket die"
-        pass
+        print "socket die"
+        # pass
 
 cv2.destroyAllWindows()
